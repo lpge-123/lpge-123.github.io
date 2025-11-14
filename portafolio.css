@@ -1,0 +1,489 @@
+/*
+ * Hoja de estilos CSS para el Portafolio
+ * Autor: Lucas Pedro Garcia Esteve
+ * Fecha: Noviembre 2025
+ * Descripción: Estilos generales, tipografía, layout y efectos avanzados (hover, transiciones)
+ */
+
+/* ---------------------------------- */
+/* Estilos Generales y Reset */
+/* ---------------------------------- */
+
+/* Reset universal: elimina márgenes y padding por defecto de todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Estilos del body: fuente, color de texto y fondo con imagen */
+body {
+    font-family: sans-serif; /* Fuente general del documento */
+    color: #333; /* Color de texto oscuro */
+    background-image: url('fondo.jpg'); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el área */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+    background-repeat: no-repeat; /* No repite la imagen */
+    line-height: 1.6; /* Espaciado entre líneas de texto */
+}
+
+/* Estilos para todos los encabezados h1, h2, h3 */
+h1, h2, h3 {
+    margin-bottom: 0.5em; /* Espacio inferior */
+    font-weight: 700; /* Negrita */
+    color: #007bff; /* Color azul para encabezados */
+}
+
+/* Estilos específicos para h2: tamaño grande, centrado y borde inferior */
+h2 {
+    font-size: 2.5em; /* Tamaño de fuente grande */
+    text-align: center; /* Centrado horizontal */
+    padding-bottom: 0.5em; /* Espacio antes del borde */
+    border-bottom: 3px solid #ccc; /* Línea inferior decorativa */
+    margin-bottom: 1em; /* Espacio debajo del h2 */
+}
+
+/* Estilos para enlaces: sin subrayado y con transición de color */
+a {
+    text-decoration: none; /* Quita el subrayado */
+    color: #007bff; /* Color azul */
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+/* Color de enlaces al pasar el ratón */
+a:hover {
+    color: #0056b3; /* Azul más oscuro */
+}
+
+/* Clase para padding de secciones: espaciado interno y ancho máximo */
+.section-padding {
+    padding: 60px 5%; /* Espaciado vertical de 60px y horizontal del 5% */
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Separador horizontal (hr) personalizado */
+hr {
+    border: 0; /* Sin borde predeterminado */
+    height: 1px; /* Altura de 1 píxel */
+    background: #ddd; /* Color gris claro */
+    margin: 40px 5%; /* Márgenes superior/inferior de 40px */
+}
+
+/* ---------------------------------- */
+/* 1. Página de Inicio (Header/Banner) */
+/* ---------------------------------- */
+
+/* Header: banner principal con imagen de fondo y altura completa de viewport */
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner-background.jpg') no-repeat center center/cover; /* Gradiente oscuro sobre imagen */
+    height: 100vh; /* Altura completa de la pantalla */
+    color: white; /* Texto en blanco */
+    display: flex; /* Flexbox para centrar contenido */
+    flex-direction: column; /* Dirección vertical */
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+    text-align: center; /* Texto centrado */
+    position: relative; /* Permite posicionamiento absoluto de elementos hijos */
+}
+
+/* Menú de navegación: fijo en la parte superior del header */
+.menu {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 0; /* Pegado al borde superior */
+    width: 100%; /* Ancho completo */
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Espacio entre logo y lista */
+    align-items: center; /* Alineación vertical centrada */
+    padding: 20px 5%; /* Espaciado interno */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    z-index: 1000; /* Siempre encima de otros elementos */
+}
+
+/* Contenedor del logo */
+.logo-container {
+    font-size: 2em; /* Tamaño grande para el icono */
+}
+
+/* Icono del logo con color verde */
+.logo-icon {
+    color: #28a745; /* Verde */
+}
+
+/* Lista de navegación: elementos en línea */
+.menu ul {
+    list-style: none; /* Sin viñetas */
+    display: flex; /* Elementos en fila */
+}
+
+/* Espaciado entre elementos de la lista */
+.menu ul li {
+    margin-left: 20px; /* Espacio a la izquierda */
+}
+
+/* Enlaces del menú: texto blanco con borde inferior transparente */
+.menu ul li a {
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-bottom: 2px solid transparent; /* Borde inferior invisible por defecto */
+    transition: border-bottom 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover en enlaces del menú: cambia color y muestra borde verde */
+.menu ul li a:hover {
+    color: #28a745; /* Verde */
+    border-bottom: 2px solid #28a745; /* Borde inferior verde */
+}
+
+/* Título principal (h1) del header: tamaño grande con sombra */
+.header-content h1 {
+    font-size: 4em; /* Tamaño muy grande */
+    margin-bottom: 10px; /* Espacio inferior */
+    color: white; /* Blanco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar legibilidad */
+}
+
+/* Subtítulo (p) del header */
+.header-content p {
+    font-size: 1.5em; /* Tamaño mediano */
+    font-weight: 300; /* Peso ligero */
+}
+
+/* ---------------------------------- */
+/* 2. Sección "Sobre Mí" */
+/* ---------------------------------- */
+
+/* Tarjeta de biografía: fondo suave con bordes redondeados y sombra */
+.bio-card {
+    background-color: #e9ecef; /* Gris muy claro */
+    border: 1px solid #ddd; /* Borde gris */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    max-width: 800px; /* Ancho máximo */
+    margin: 0 auto 30px auto; /* Centrado horizontal con espacio inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Texto de la biografía: justificado */
+.bio-card p {
+    font-size: 1.1em; /* Tamaño ligeramente mayor */
+    text-align: justify; /* Justificado */
+}
+
+/* Contenedor de iconos sociales (no usado, mantener por compatibilidad) */
+.social-icons {
+    text-align: center; /* Centrado */
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Iconos sociales individuales */
+.social-icon {
+    font-size: 2em; /* Tamaño grande */
+    margin: 0 15px; /* Espacio horizontal */
+    color: #6c757d; /* Gris por defecto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transiciones */
+}
+
+/* Efecto hover: escala ligeramente el icono */
+.social-icon:hover {
+    transform: scale(1.1); /* Aumenta 10% */
+}
+
+/* Colores específicos al hacer hover en iconos */
+.social-icon .fa-linkedin-in:hover {
+    color: #0077b5; /* Azul LinkedIn */
+}
+
+.social-icon .fa-github:hover {
+    color: #171515; /* Negro GitHub */
+}
+
+.social-icon .fa-twitter:hover {
+    color: red; /* Rojo */
+}
+
+/* Iconos sociales: se ponen rojos al hacer clic o enfocar */
+.social-links a.insta:active i,
+.social-links a.yt:active i,
+.social-links a.tk:active i,
+.social-links a.insta:focus i,
+.social-links a.yt:focus i,
+.social-links a.tk:focus i {
+    color: #ff0000 !important; /* Rojo forzado */
+    background: none !important; /* Sin fondo */
+    -webkit-text-fill-color: initial !important; /* Restaura color de relleno */
+}
+
+/* ---------------------------------- */
+/* 3. Galería de Proyectos */
+/* ---------------------------------- */
+
+/* Grid de proyectos usando Flexbox */
+.project-grid {
+    display: flex; /* Flexbox */
+    flex-wrap: wrap; /* Permite múltiples líneas */
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centrado horizontal */
+}
+
+/* Tarjeta individual de proyecto */
+.project-item {
+    width: 300px; /* Ancho fijo */
+    border: 1px solid #ddd; /* Borde gris */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que sobresale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: white; /* Fondo blanco */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Dirección vertical */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones */
+}
+
+/* Efecto hover: levanta la tarjeta y aumenta la sombra */
+.project-item:hover {
+    transform: translateY(-5px); /* Desplaza 5px hacia arriba */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Área de imagen del proyecto */
+.project-image {
+    background-color: #f8f9fa; /* Gris muy claro */
+    height: 150px; /* Altura fija */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    font-size: 4em; /* Tamaño grande para iconos */
+    border-bottom: 1px solid #eee; /* Borde inferior sutil */
+}
+
+/* Descripción del proyecto */
+.project-description {
+    padding: 15px; /* Espaciado interno */
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+/* Título del proyecto */
+.project-description h3 {
+    font-size: 1.3em; /* Tamaño mediano */
+    color: #333; /* Gris oscuro */
+    margin-bottom: 5px; /* Espacio inferior */
+}
+
+/* Texto descriptivo del proyecto */
+.project-description p {
+    font-size: 0.9em; /* Tamaño pequeño */
+    color: #555; /* Gris medio */
+}
+
+/* Colores específicos para iconos de redes sociales en proyectos */
+.youtube-icon { color: #ff0000; } /* Rojo YouTube */
+.tiktok-icon { color: #000; } /* Negro TikTok */
+.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); /* Gradiente Instagram */
+    -webkit-text-fill-color: transparent; /* Texto transparente para mostrar gradiente */
+    font-size: 3.5em; /* Más grande */
+}
+
+/* Iconos de proyectos: se ponen rojos al hacer clic */
+.project-image .youtube-icon:active,
+.project-image .tiktok-icon:active,
+.project-image .instagram-icon:active {
+    color: #ff0000 !important; /* Rojo */
+    background: none !important; /* Sin gradiente */
+    -webkit-text-fill-color: initial !important; /* Color normal */
+}
+
+/* ---------------------------------- */
+/* 4. Habilidades y Conocimientos */
+/* ---------------------------------- */
+
+/* Resumen de habilidades: caja centrada con fondo claro */
+.skills-summary {
+    max-width: 900px; /* Ancho máximo */
+    margin: 0 auto 40px auto; /* Centrado con espacio inferior */
+    text-align: center; /* Texto centrado */
+    padding: 15px; /* Espaciado interno */
+    background-color: #f1f1f1; /* Gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Contenedor de tarjetas de habilidades */
+.skills-container {
+    display: flex; /* Flexbox */
+    flex-wrap: wrap; /* Múltiples filas */
+    gap: 30px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centrado */
+}
+
+/* Tarjeta individual de habilidad */
+.skill-item {
+    width: 250px; /* Ancho fijo */
+    text-align: center; /* Texto centrado */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    transition: box-shadow 0.3s ease; /* Transición de sombra */
+}
+
+/* Efecto hover: aumenta la sombra */
+.skill-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Icono de habilidad */
+.skill-icon {
+    font-size: 3em; /* Tamaño grande */
+    color: #007bff; /* Azul */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+/* Título de habilidad (h3) */
+.skill-item h3 {
+    color: #333; /* Gris oscuro */
+    margin-bottom: 5px; /* Espacio inferior */
+}
+
+/* Descripción de habilidad */
+.skill-item p {
+    font-size: 0.9em; /* Tamaño pequeño */
+    color: #666; /* Gris medio */
+    margin-bottom: 15px; /* Espacio inferior */
+    min-height: 40px; /* Altura mínima para uniformidad */
+}
+
+/* Contenedor de barra de progreso */
+.skill-bar-container {
+    width: 100%; /* Ancho completo */
+    background-color: #f1f1f1; /* Gris claro (fondo de la barra vacía) */
+    border-radius: 5px; /* Bordes redondeados */
+    height: 10px; /* Altura de la barra */
+}
+
+/* Barra de progreso individual (nivel de habilidad) */
+.skill-bar {
+    text-align: right; /* Texto alineado a la derecha */
+    padding-top: 2px; /* Espaciado superior */
+    padding-bottom: 2px; /* Espaciado inferior */
+    padding-right: 5px; /* Espaciado derecho */
+    color: white; /* Texto blanco */
+    height: 10px; /* Altura */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #007bff; /* Azul (color de progreso) */
+    transition: width 1s ease-in-out; /* Animación del ancho */
+    font-size: 0.75em; /* Tamaño de fuente pequeño */
+    line-height: 10px; /* Altura de línea */
+}
+
+/* Niveles específicos de habilidad (porcentajes) */
+.skill-bar.html { width: 90%; } /* HTML: 90% */
+.skill-bar.css { width: 80%; } /* CSS: 80% */
+.skill-bar.linux { width: 75%; } /* Linux: 75% */
+.skill-bar.network { width: 85%; } /* Redes: 85% */
+.skill-bar.word { width: 88%; } /* Word: 88% */
+.skill-bar.powerpoint { width: 82%; } /* PowerPoint: 82% */
+
+/* ---------------------------------- */
+/* 5. Formulario de Contacto */
+/* ---------------------------------- */
+
+/* Texto incentivo para contacto */
+.contact-incentive {
+    text-align: center; /* Centrado */
+    font-size: 1.5em; /* Tamaño grande */
+    color: #28a745; /* Verde llamativo */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 30px; /* Espacio inferior */
+}
+
+/* Formulario de contacto: caja centrada con fondo blanco */
+.contact-form {
+    max-width: 600px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 30px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Grupo de campo del formulario */
+.form-group {
+    margin-bottom: 20px; /* Espacio entre campos */
+}
+
+/* Etiquetas del formulario */
+.form-group label {
+    display: block; /* Ocupa toda la línea */
+    margin-bottom: 5px; /* Espacio inferior */
+    font-weight: bold; /* Negrita */
+}
+
+/* Campos de entrada (input y textarea) */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones */
+}
+
+/* Efecto hover y focus en campos: cambia borde y fondo */
+.contact-form input[type="text"]:hover,
+.contact-form input[type="email"]:hover,
+.contact-form textarea:hover,
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff; /* Borde azul */
+    background-color: #f0f8ff; /* Fondo azul claro */
+    outline: none; /* Sin outline por defecto */
+}
+
+/* Botón de envío del formulario */
+.send-button {
+    display: block; /* Ocupa toda la línea */
+    width: 100%; /* Ancho completo */
+    padding: 15px; /* Espaciado interno */
+    background-color: #28a745; /* Verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 1.1em; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease; /* Transiciones */
+}
+
+/* Efecto hover: oscurece el botón y añade sombra */
+.send-button:hover {
+    background-color: #218838; /* Verde más oscuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Efecto al hacer clic: reduce ligeramente el tamaño */
+.send-button:active {
+    transform: scale(0.98); /* Escala 98% */
+}
+
+/* ---------------------------------- */
+/* 6. Pie de Página */
+/* ---------------------------------- */
+
+/* Footer: fondo oscuro con texto blanco centrado */
+footer {
+    background-color: #343a40; /* Gris oscuro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrado */
+    padding: 20px 0; /* Espaciado vertical */
+    font-size: 0.9em; /* Tamaño de fuente pequeño */
+}
+
+/* ---------------------------------- */
+/* Importar Font Awesome 5 */
+/* ---------------------------------- */
+
+/* Importa la librería de iconos Font Awesome desde CDN */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
